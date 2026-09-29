@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+:root {
+    --bg-dark: #0f111a;
+    --card-bg: #161b22;
+    --neon-purple: #8b5cf6;
+    --border-soft: #30363d;
+}
+
+body { 
+    background-color: var(--bg-dark); 
+    color: white; 
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+}
+
+.show-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+}
+
+/* --- ESCUDO Y HEADER --- */
+.profile-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.team-logo-container {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.team-logo-container:hover {
+    transform: scale(1.1) rotate(3deg);
+}
+
+.img-header-escudo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    z-index: 2;
+    filter: drop-shadow(0 0 20px rgba(255,255,255,0.1));
+}
+
+.profile-header h1 {
+    font-size: 4.5rem;
+    font-weight: 900;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+}
+
+/* --- GRID DE ESTADÍSTICAS --- */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.stat-card, .difference {
+    border: 2px solid rgba(255, 255, 255, 0.05);
+}
+
+.stat-card {
+    background: var(--card-bg);
+    border-radius: 24px;
+    padding: 3rem 2rem;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    transition: all 0.4s ease;
+    animation: fadeInUp 0.6s ease-out backwards;
+}
+
+/* Colores Dinámicos */
+.stat-points { --card-color: #fbbf24; animation-delay: 0.1s; }
+.stat-favor  { --card-color: #34d399; animation-delay: 0.2s; }
+.stat-contra { --card-color: #f87171; animation-delay: 0.3s; }
+.stat-budget { --card-color: #0ea5e9; animation-delay: 0.4s; }
+
+.stat-card:hover, .difference:hover {
+    transform: translateY(-10px);
+    border-color: var(--card-color);
+    box-shadow: 0 0 25px var(--card-color);
+}
+
+/* EFECTO SHIMMER (BRILLO) */
+.stat-card::after, .difference::after {
+    content: "";
+    position: absolute;
+    top: -50%; left: -60%;
+    width: 20%; height: 200%;
+    background: rgba(255, 255, 255, 0.08);
+    transform: rotate(30deg);
+    transition: 0.6s;
+    pointer-events: none;
+}
+
+.stat-card:hover::after, .difference:hover::after {
+    left: 120%;
+}
+
+.stat-icon {
+    font-size: 3rem;
+    color: var(--card-color);
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 0 10px var(--card-color));
+}
+
+.stat-value {
+    font-size: 3.5rem;
+    font-weight: 900;
+}
+
+/* --- CORRECCIÓN PRESUPUESTO --- */
+.stat-budget .stat-value {
+    font-size: 1.8rem !important;
+}
+
+/* --- DIFERENCIA DE GOLES (COMO CARTA) --- */
+.difference-container {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+.difference {
+    background: var(--card-bg);
+    padding: 1.5rem 3.5rem;
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: 0.3s;
+    --card-color: #8b5cf6;
+}
+
+.diff-value { font-size: 2rem; font-weight: 900; }
+.diff-value.positive { color: #34d399; }
+.diff-value.negative { color: #f87171; }
+
+/* --- BOTONES --- */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 4rem;
+}
+
+.btn-custom {
+    padding: 1.2rem 3rem;
+    border-radius: 15px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-volver {
+    background: rgba(139, 92, 246, 0.1);
+    color: #8b5cf6;
+}
+
+.btn-volver:hover {
+    background: rgba(139, 92, 246, 0.2);
+    color: #a78bfa;
+}
+
+.btn-editar {
+    background: linear-gradient(135deg, #9333ea 0%, #4f46e5 100%) !important;
+    color: #ffffff !important;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 15px rgba(147, 51, 234, 0.3);
+}
+
+.btn-editar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(147, 51, 234, 0.5);
+    color: #ffffff !important;
+}
+
+/* --- ANIMACIONES --- */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

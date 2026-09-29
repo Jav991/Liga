@@ -1,0 +1,286 @@
+/* Contenedor edit profesional */
+.edit-container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Card oscuro del formulario */
+.card {
+    background: linear-gradient(145deg, #1e293b, #334155);
+    border-radius: 24px;
+    padding: 0;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    overflow: hidden;
+}
+
+/* Título centrado */
+h1 {
+    font-size: 2.25rem;
+    font-weight: 900;
+    text-align: center;
+    margin: 0;
+    padding: 2.5rem 2rem;
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+/* Body del form */
+.card > form {
+    padding: 2.5rem;
+}
+
+/* Form group */
+.form-group {
+    margin-bottom: 1.75rem;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    color: #cbd5e1;
+    letter-spacing: 0.3px;
+}
+
+label .required {
+    color: #f87171;
+    margin-left: 4px;
+}
+
+/* Inputs oscuros */
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    border: 2px solid #475569;
+    font-size: 1rem;
+    color: #fff;
+    background: #1e293b;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Inter', sans-serif;
+}
+
+input::placeholder {
+    color: #64748b;
+}
+
+input:hover {
+    border-color: #64748b;
+}
+
+input:focus {
+    outline: none;
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.15);
+    background: #0f172a;
+}
+
+/* Grid responsive */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.75rem;
+}
+
+/* Botones mejorados */
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.btn {
+    padding: 1rem 2.5rem;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 1;
+    justify-content: center;
+}
+
+.btn-cancel {
+    background: transparent;
+    color: #94a3b8;
+    border: 2px solid #475569;
+}
+
+.btn-cancel:hover {
+    background: rgba(71, 85, 105, 0.2);
+    border-color: #64748b;
+    color: #cbd5e1;
+    transform: translateY(-2px);
+}
+
+.btn-save {
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+}
+
+.btn-save:hover {
+    background: linear-gradient(135deg, #7c3aed, #db2777);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.6);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card > form {
+        padding: 1.5rem;
+    }
+    
+    h1 {
+        font-size: 1.75rem;
+        padding: 2rem 1.5rem;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .btn-group {
+        flex-direction: column;
+    }
+}
+
+/* --- ESTILO NEÓN PARA EL INPUT DE ARCHIVO --- */
+
+.form-group input[type="file"] {
+    background: rgba(15, 23, 42, 0.6);
+    border: 2px dashed rgba(139, 92, 246, 0.4); /* Borde discontinuo elegante */
+    padding: 1.5rem;
+    border-radius: 12px;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+/* Efecto cuando pasas el ratón por encima */
+.form-group input[type="file"]:hover {
+    border-color: #ec4899; /* Cambia a rosa neón */
+    background: rgba(139, 92, 246, 0.05);
+    box-shadow: 0 0 15px rgba(236, 72, 153, 0.2);
+}
+
+/* Estilo del botón interno que dice "Seleccionar archivo" */
+.form-group input[type="file"]::file-selector-button {
+    background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    margin-right: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    transition: 0.3s;
+}
+
+.form-group input[type="file"]::file-selector-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+}
+
+/* Contenedor de la previsualización del escudo actual (en Editar) */
+.current-logo-preview {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 1rem;
+}
+
+.current-logo-preview img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 8px;
+    border: 2px solid #2ecc71; /* Verde neón para el escudo activo */
+    box-shadow: 0 0 10px rgba(46, 204, 113, 0.3);
+}
+
+
+/* --- ADAPTACIÓN PARA EL INPUT DE ESCUDO --- */
+
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 1.2rem;
+    background: rgba(15, 23, 42, 0.5);
+    border: 2px dashed rgba(139, 92, 246, 0.3); /* Borde neón discontinuo */
+    border-radius: 12px;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.form-group input[type="file"]:hover {
+    border-color: #ec4899;
+    background: rgba(139, 92, 246, 0.05);
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.2);
+}
+
+/* Estilo del botón "Seleccionar archivo" */
+.form-group input[type="file"]::file-selector-button {
+    background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-group input[type="file"]::file-selector-button:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* Previsualización específica para la edición */
+.current-shield-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.img-preview-edit {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border: 2px solid #2ecc71;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(46, 204, 113, 0.3);
+}

@@ -1,0 +1,215 @@
+/* ============================================
+   EDIT PARTIDO - PROFESIONAL
+   ============================================ */
+
+/* Contenedor edit profesional */
+.edit-container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Card oscuro del formulario */
+.card {
+    background: linear-gradient(145deg, #1e293b, #334155);
+    border-radius: 24px;
+    padding: 0;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    overflow: hidden;
+}
+
+/* Título centrado */
+.card h1 {
+    font-size: 2.25rem;
+    font-weight: 900;
+    text-align: center;
+    margin: 0;
+    padding: 2.5rem 2rem;
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Body del form */
+.card > form {
+    padding: 2.5rem;
+}
+
+/* Form group */
+.form-group {
+    margin-bottom: 1.75rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    color: #cbd5e1;
+    letter-spacing: 0.3px;
+}
+
+.form-group label i {
+    margin-right: 0.5rem;
+    color: #8b5cf6;
+}
+
+.form-group label .required {
+    color: #f87171;
+    margin-left: 4px;
+}
+
+/* Inputs y selects oscuros */
+.form-control,
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    border: 2px solid #475569;
+    font-size: 1rem;
+    color: #fff;
+    background: #1e293b;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Inter', sans-serif;
+}
+
+input::placeholder,
+select option {
+    color: #64748b;
+}
+
+.form-control:hover,
+input:hover,
+select:hover {
+    border-color: #64748b;
+}
+
+.form-control:focus,
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.15);
+    background: #0f172a;
+}
+
+/* Select específico */
+select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238b5cf6' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 3rem;
+}
+
+select option {
+    background: #1e293b;
+    color: #fff;
+}
+
+/* Grid responsive */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.75rem;
+}
+
+/* Error messages */
+.error-message {
+    display: block;
+    color: #f87171;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    font-weight: 500;
+}
+
+/* Botones mejorados */
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.btn {
+    padding: 1rem 2.5rem;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 1;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.btn-cancel {
+    background: transparent;
+    color: #94a3b8;
+    border: 2px solid #475569;
+}
+
+.btn-cancel:hover {
+    background: rgba(71, 85, 105, 0.2);
+    border-color: #64748b;
+    color: #cbd5e1;
+    transform: translateY(-2px);
+}
+
+.btn-save {
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+}
+
+.btn-save:hover {
+    background: linear-gradient(135deg, #7c3aed, #db2777);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.6);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .edit-container {
+        padding: 1rem;
+    }
+    
+    .card > form {
+        padding: 1.5rem;
+    }
+    
+    .card h1 {
+        font-size: 1.75rem;
+        padding: 2rem 1.5rem;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .btn-group {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}
