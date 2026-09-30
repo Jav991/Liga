@@ -2,7 +2,7 @@
 
 <nav class="navbar-custom">
     <div class="navbar-left">
-        <a href="{{ route('partidos.index') }}" class="navbar-brand">
+        <a href="{{ route('home') }}" class="navbar-brand">
             <div class="navbar-brand-icon">
                 <i class="fas fa-trophy"></i>
             </div>
