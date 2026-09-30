@@ -88,7 +88,7 @@ class EquipoController extends Controller
         $equipoBuscado = null;
 
         if($nombre === null || $nombre === ''){
-            return redirect()->route('equipos.index')->with('error', 'No se encontró: ' . $nombre);
+            return redirect()->route('equipos.index')->with('error', 'No se especificó ningún equipo.');
         }
 
         foreach($equipos as $equipo){
@@ -96,6 +96,10 @@ class EquipoController extends Controller
                 $equipoBuscado = $equipo;
                 break;
             }
+        }
+
+        if(!$equipoBuscado){
+            return redirect()->route('equipos.index')->with('error', 'No se encontró el equipo con nombre: ' . $nombre);
         }
         return view('equipos.filtroEquipo', compact('equipoBuscado'));
     }
