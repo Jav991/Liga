@@ -21,7 +21,7 @@
             <div class="flex items-center gap-4">
                 @if (Route::has('login'))
                     @auth
-                        <a href="{{ route('partidos.index') }}" class="px-5 py-2.5 bg-purple-600 hover:bg-purple-500 text-white font-bold rounded-xl text-sm transition shadow-lg shadow-purple-600/30">
+                        <a href="{{ route('equipos.index') }}" class="px-5 py-2.5 bg-purple-600 hover:bg-purple-500 text-white font-bold rounded-xl text-sm transition shadow-lg shadow-purple-600/30">
                             Ir al Panel
                         </a>
                     @else
